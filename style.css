@@ -1,0 +1,710 @@
+/* General Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden; /* Prevent horizontal scroll on smaller screens */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+.btn {
+    background-color: #e54c3c;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #c93a2c;
+}
+
+/* Header */
+.header {
+    background-color: #fff;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow items to wrap */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #e54c3c;
+}
+
+/* Hero Section */
+.hero-section {
+    /* Replace the URL with your desired image path */
+    background: url('images/4.jpg') no-repeat center center/cover;
+    color: #fff;
+    height: 600px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 50px;
+    text-align: right;
+    
+    /* Add a semi-transparent overlay for better text readability */
+    position: relative;
+    z-index: 1;
+}
+
+/* Create the overlay */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Adjust the last value (0.4) to control transparency */
+    z-index: -1;
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+/* Features Section */
+/* Features Section */
+
+#space{
+    height: 20px;
+    width: 100%;
+}
+.features-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* Remove background-color: #f7f7f7; if you want the image to be fully visible */
+    padding: 40px 20px;
+    text-align: center;
+    flex-wrap: wrap;
+
+    /* --- ADD THESE LINES FOR THE BACKGROUND IMAGE --- */
+    background-image: url('images/3.jpg'); /* Replace with your image URL */
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    color: #fff; /* Change text color for better contrast if your image is dark */
+    position: relative; /* Needed for overlay if you add one */
+    z-index: 1; /* Needed for overlay if you add one */
+    /* --- END ADDED LINES --- */
+}
+
+/* Optional: Add an overlay for better text readability */
+.features-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 50% black overlay */
+    z-index: -1; /* Place behind content */
+}
+
+/* Also, adjust text color within feature items if needed */
+.feature-item h3 {
+    color: #fff; /* Example: make feature titles white for contrast */
+}
+.feature-item i {
+    color: #e54c3c; /* Keep icon color distinct, or change to white if preferred */
+    /* If you want the icon color to be white, change it to: color: #fff; */
+}
+
+/* Adjustments for responsiveness with background image */
+@media (max-width: 768px) {
+    .features-section {
+        background-attachment: scroll; /* Background scroll on mobile */
+    }
+}
+
+.feature-item {
+    flex-basis: 22%;
+    margin: 15px; /* Add margin for spacing on smaller screens */
+}
+
+.feature-item i {
+    font-size: 40px;
+    color: #e54c3c;
+    margin-bottom: 10px;
+}
+
+/* Top Destinations Section */
+.destinations-section {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.destinations-section h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.destination-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.tab-btn {
+    background-color: #e54c3c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px; /* Add margin for spacing */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.tab-btn:hover, .tab-btn.active {
+    background-color: #c93a2c;
+}
+
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.destination-card {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.destination-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.destination-card h3 {
+    font-size: 20px;
+    padding: 15px 15px 5px;
+}
+
+.destination-card p {
+    font-size: 14px;
+    padding: 0 15px 15px;
+    color: #666;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    background-color: #f7f7f7;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.testimonials-section h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.testimonials-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.testimonial-card {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 350px;
+    text-align: center;
+    flex-grow: 1; /* Allows cards to grow and fill space */
+}
+
+.testimonial-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.testimonial-card h4 {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Footer Section */
+.footer {
+    background-color: #4a90e2;
+    color: #fff;
+    padding: 60px 20px 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.footer-column {
+    flex-basis: calc(33.33% - 20px);
+    max-width: 400px;
+    margin-bottom: 20px; /* Add margin for mobile view */
+}
+
+.footer-column h3 {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.footer-column.useful-advice ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column.useful-advice li {
+    margin-bottom: 10px;
+}
+
+.footer-column.useful-advice a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-column.get-in-touch form input,
+.footer-column.get-in-touch form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.footer-column.get-in-touch form input::placeholder,
+.footer-column.get-in-touch form textarea::placeholder {
+    color: #ddd;
+}
+
+.footer-column.get-in-touch form button {
+    background-color: #e54c3c;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.footer-column.get-in-touch form button:hover {
+    background-color: #c93a2c;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 30px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 20px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #e54c3c;
+}
+
+/*------------------------------
+  Media Queries for Responsiveness
+  ------------------------------*/
+
+/* Mobile devices (up to 768px) */
+@media (max-width: 768px) {
+    .header {
+        padding: 20px;
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+    .nav-links li {
+        margin: 10px 0;
+    }
+    .hero-section {
+        height: 400px;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+    }
+    .hero-content {
+        max-width: 100%;
+    }
+    .hero-content h1 {
+        font-size: 32px;
+    }
+    .features-section {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .feature-item {
+        flex-basis: 100%;
+        margin: 20px 0;
+    }
+    .destination-tabs {
+        flex-direction: column;
+    }
+    .tab-btn {
+        width: 80%;
+        margin: 5px auto;
+    }
+    .testimonials-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .testimonial-card {
+        margin-bottom: 20px;
+    }
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-column {
+        flex-basis: 100%;
+    }
+    .social-icons {
+        margin-top: 20px;
+    }
+}
+
+/* House for Rent Section Styling (inspired by poster) */
+.house-for-rent-section {
+    background-color: #333333; /* Dark background matching poster */
+    background-image: url('https://via.placeholder.com/1920x1080/444444/FFFFFF?text=Subtle+Background+Texture'); /* Optional: a subtle background texture */
+    background-size: cover;
+    background-position: center;
+    padding: 60px 20px;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden; /* Ensure rounded corners on children don't overflow */
+}
+
+.house-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 40px;
+    align-items: center; /* Vertically align items */
+    justify-content: center; /* Center horizontally */
+}
+
+.house-details-left {
+    flex: 1; /* Take up available space */
+    min-width: 300px; /* Minimum width before wrapping */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.4); /* Slightly transparent background for readability */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+    position: relative;
+    z-index: 2; /* Ensure it's above background elements */
+}
+
+.section-title {
+    font-size: 3.5em; /* Larger font size */
+    font-weight: 900; /* Extra bold */
+    color: #FFD700; /* Gold color from poster */
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+    line-height: 1;
+}
+
+.features-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns for features */
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.feature-block {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle background for each feature */
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    color: #eee;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.feature-block i {
+    color: #FFD700; /* Gold checkmark */
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.price-info-block {
+    background-color: #FFD700; /* Gold background for price */
+    color: #333333; /* Dark text for contrast */
+    padding: 20px 25px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.price-info-block .start-from {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.price-info-block .price-value {
+    font-size: 2.5em; /* Large price text */
+    font-weight: 900;
+    line-height: 1;
+    margin: 0;
+}
+
+.contact-info-block {
+    margin-bottom: 30px;
+    padding: 15px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-info-block h3 {
+    font-size: 1.4em;
+    color: #FFD700; /* Gold for "MORE INFORMATION" */
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.contact-info-block p {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info-block i {
+    color: #FFD700; /* Gold phone icon */
+    margin-right: 10px;
+    font-size: 1.1em;
+}
+
+.book-now-btn {
+    background-color: #e54c3c; /* Existing btn color, but could be adjusted */
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 1.3em;
+    border-radius: 50px; /* More rounded button */
+    display: block; /* Make it a block-level button */
+    width: fit-content;
+    margin: 0 auto; /* Center the button */
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book-now-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.house-images-right {
+    flex: 1.5; /* Take more space for images */
+    min-width: 300px; /* Minimum width before wrapping */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    position: relative; /* For the curved overlay effect */
+    padding-left: 20px; /* Space for the curve */
+}
+
+/* Curved overlay effect */
+.house-images-right::before {
+    content: '';
+    position: absolute;
+    top: -30px; /* Adjust to curve from the top */
+    bottom: -30px; /* Adjust to curve from the bottom */
+    left: -100px; /* Pull it outside to create the curve */
+    width: 200px; /* Width of the curve element */
+    background-color: #FFD700; /* Gold background for the curve */
+    transform: skewX(-15deg); /* Create the diagonal curve */
+    z-index: 1; /* Behind the images */
+}
+
+
+.main-image-wrapper {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    z-index: 2; /* Ensure images are above curve */
+}
+
+.main-house-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.thumbnail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two thumbnails side-by-side */
+    gap: 15px;
+    width: 100%;
+    z-index: 2; /* Ensure images are above curve */
+}
+
+.thumbnail {
+    width: 100%;
+    height: 150px; /* Fixed height for thumbnails */
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease;
+}
+
+.thumbnail:hover {
+    transform: scale(1.03);
+}
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    .house-container {
+        flex-direction: column;
+    }
+    .house-details-left,
+    .house-images-right {
+        min-width: unset;
+        width: 100%; /* Take full width on smaller screens */
+        padding: 0; /* Remove padding here, add to inner elements if needed */
+        margin-bottom: 30px;
+    }
+    .house-details-left {
+      padding: 30px;
+    }
+    .section-title {
+        font-size: 2.8em;
+    }
+    .house-images-right::before {
+        display: none; /* Hide the curve on smaller screens for better layout */
+    }
+}
+
+@media (max-width: 600px) {
+    .section-title {
+        font-size: 2.2em;
+    }
+    .features-wrapper {
+        grid-template-columns: 1fr; /* One column for features on very small screens */
+    }
+    .house-details-left {
+      padding: 20px;
+    }
+    .price-info-block .price-value {
+        font-size: 2em;
+    }
+    .book-now-btn {
+        font-size: 1.1em;
+        padding: 12px 25px;
+    }
+    .thumbnail-grid {
+        grid-template-columns: 1fr; /* Stack thumbnails on very small screens */
+    }
+}
